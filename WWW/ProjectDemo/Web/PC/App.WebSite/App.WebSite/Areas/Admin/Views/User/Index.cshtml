@@ -1,0 +1,284 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section Styles{
+    <style type="text/css">
+        .col-sm-11 label{
+            margin-right:15px;
+        }
+        .search-query{
+            border:1px solid #eee;
+            padding:20px;
+        }
+        .form-group>label:nth-of-type(1){
+            width:70px;
+        }
+    </style>
+}
+<div ng-controller="userCtrl" style="margin-top:10px;">
+    <div class="col-sm-12 search-query" >     
+        <form id="uiQueryForm" class="form-horizontal" role="form">
+            <div class="form-group">
+                <label class="col-sm-1 control-label no-padding-right bolder blue" for="form-field-1">
+                    @*<span class="help-button" data-rel="popover" data-trigger="hover" data-placement="left" data-content="More details." title="Popover on hover">?</span>*@
+                用户名：</label>
+                <div class="col-sm-2">
+                    <input type="text" id="form-field-1" placeholder="Username" class="col-xs-10 col-sm-12" />                    
+                </div>
+                <label class="col-sm-1 control-label no-padding-right bolder blue" for="form-field-1">用户名：</label>
+                <div class="col-sm-2">
+                    <select class="form-control" id="form-field-select-1">
+                        <option value="" selected>&nbsp;</option>
+                        <option value="AL">Alabama</option>
+                        <option value="AK">Alaska</option>
+                        <option value="AZ">Arizona</option>
+                        <option value="AR">Arkansas</option>
+                        <option value="CA">California</option>
+                        <option value="CO">Colorado</option>
+                        <option value="CT">Connecticut</option>  
+                    </select>
+                </div>
+                <label class="col-sm-1 control-label no-padding-right bolder blue" for="form-field-1">用户名：</label>
+                <div class="col-sm-2">
+                    <input type="text" id="form-field-1" placeholder="Username" class="col-xs-10 col-sm-12" />
+                </div>
+                <label class="col-sm-1 control-label no-padding-right bolder blue" for="form-field-1">用户名：</label>
+                <div class="col-sm-2">
+                    <input type="text" id="form-field-1" placeholder="Username" class="col-xs-10 col-sm-12" />
+                </div>
+               
+                
+            </div>
+
+            <div class="space-4"></div>
+
+            <div class="form-group">
+                <label class="col-sm-1 control-label no-padding-right bolder blue" for="form-field-1">用户名：</label>
+                <div class="col-sm-11">
+                    <label >
+                        <input name="form-field-checkbox" type="checkbox" class="ace" />
+                        <span class="lbl"> choice 1</span>
+                    </label>
+                    <label>
+                        <input name="form-field-checkbox" type="checkbox" class="ace" />
+                        <span class="lbl"> choice 1</span>
+                    </label>
+                    <label>
+                        <input name="form-field-checkbox" type="checkbox" class="ace" />
+                        <span class="lbl"> choice 1</span>
+                    </label>
+                    <label>
+                        <input name="form-field-checkbox" type="checkbox" class="ace" />
+                        <span class="lbl"> choice 1</span>
+                    </label>
+                    <label>
+                        <input name="form-field-checkbox" type="checkbox" class="ace" />
+                        <span class="lbl"> choice 1</span>
+                    </label>
+                </div>               
+            </div>
+
+            <div class="space-4"></div>
+
+            <div class="form-group">
+                <label class="col-sm-1 control-label no-padding-right bolder blue" for="form-field-1">用户名：</label>
+                <div class="col-sm-11">
+                    <label>
+                        <input name="form-field-radio" type="radio" class="ace" />
+                        <span class="lbl"> radio option 1</span>
+                    </label>
+                    <label>
+                        <input name="form-field-radio" type="radio" class="ace" />
+                        <span class="lbl"> radio option 1</span>
+                    </label>
+                    <label>
+                        <input name="form-field-radio" type="radio" class="ace" />
+                        <span class="lbl"> radio option 1</span>
+                    </label>
+                    <label>
+                        <input name="form-field-radio" type="radio" class="ace" />
+                        <span class="lbl"> radio option 1</span>
+                    </label>
+                    <label>
+                        <input name="form-field-radio" type="radio" class="ace" />
+                        <span class="lbl"> radio option 1</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="space-4"></div>
+
+            <div class="form-group">
+                <button class="btn btn-info pull-right"  type="button">
+                    <i class="icon-search bigger-110"></i>
+                    查询
+                </button>
+            </div>
+
+         
+        </form>
+    </div>
+   
+    <div class="col-sm-12" style="margin-top:20px;">
+        <div class="widget-box transparent">
+            @*<div class="widget-header widget-header-flat">
+                <h4 class="lighter">
+                    <i class="icon-star orange"></i>
+                    热门域名
+                </h4>
+
+                <div class="widget-toolbar">
+                    <a href="#" data-action="collapse">
+                        <i class="icon-chevron-up"></i>
+                    </a>
+                </div>
+            </div>*@
+
+            <div class="widget-body">
+                <div class="widget-main no-padding">
+                    <table class="table table-bordered table-striped">
+                        <thead class="thin-border-bottom">
+                            <tr>
+                                <th>
+                                    <i class="icon-caret-right blue"></i>
+                                    序号
+                                </th>
+                                <th>
+                                    <i class="icon-caret-right blue"></i>
+                                    用户名称
+                                </th>
+                                <th>
+                                    <i class="icon-caret-right blue"></i>
+                                    性别
+                                </th>
+                                <th>
+                                    <i class="icon-caret-right blue"></i>
+                                    角色
+                                </th>
+                                <th>
+                                    <i class="icon-caret-right blue"></i>
+                                    手机号
+                                </th>
+                                <th>
+                                    <i class="icon-caret-right blue"></i>
+                                    价格
+                                </th>
+
+                                <th class="hidden-480">
+                                    <i class="icon-caret-right blue"></i>
+                                    状态
+                                </th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr ng-repeat="user in Users">
+                                <td ng-bind="$index+1"></td>
+                                <td ng-bind="user.Name"></td>
+                                @*<td ng-bind="user.Sex"></td>
+                                    <td ng-bind="user.RoleName"></td>
+                                    <td ng-bind="user.Mobile"></td>*@
+                                <td ng-bind="user.Name"></td>
+                                <td ng-bind="user.Name"></td>
+                                <td ng-bind="user.Name"></td>
+                                <td>
+                                    <small>
+                                        <s class="red">$29.99</s>
+                                    </small>
+                                    <b class="green">$19.99</b>
+                                </td>
+
+                                <td class="hidden-480">
+                                    <span class="label label-info arrowed-right arrowed-in">销售中</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <tm-pagination conf="paginationConf"></tm-pagination>
+                    @*<div class="btn-group">
+                            <button class="btn">1</button>
+                            <button class="btn">2</button>
+                            <button class="btn">3</button>
+                        </div>
+                        <div class="btn-toolbar">
+                            <div class="btn-group">
+                                <button class="btn btn-light">1</button>
+                                <button class="btn btn-light">2</button>
+                                <button class="btn btn-light">3</button>
+                                <button class="btn btn-light">4</button>
+                            </div>
+
+                            <div class="btn-group">
+                                <button class="btn active">5</button>
+                                <button class="btn">6</button>
+                                <button class="btn">7</button>
+                            </div>
+
+                            <div class="btn-group">
+                                <button class="btn btn-grey">8</button>
+                            </div>
+                        </div>*@
+                </div><!-- /widget-main -->
+            </div><!-- /widget-body -->
+        </div><!-- /widget-box -->
+    </div>
+
+
+</div>
+
+
+@section Scripts{
+    <script type="text/javascript">
+        myApp.controller('userCtrl', ['$scope', '$rootScope', '$http', initUserCtrl]);
+        function initUserCtrl($scope, $rootScope, $http, $commonService) {
+            //配置分页基本参数
+            $scope.paginationConf = {
+                currentPage: 1,
+                itemsPerPage: 5,
+                pagesLength: 15,
+                perPageOptions: [10, 20, 30, 40, 50],
+                onChange: function () {
+                    $scope.thisPage.renderTableList();
+                }
+            };
+            $scope.thisPage = {
+                initPage: function () {
+                    this.initCtrl();
+                    this.regEvent();
+                    this.renderTableList();
+                },
+                regEvent:function(){
+
+                },
+                initCtrl:function(){
+
+                },
+                renderTableList: function (newValue, oldValue, scope) {
+                    var _this = this;
+                    $http({
+                        method: 'POST',
+                        params: _this.getParams(),
+                        dataType: 'json',
+                        url: '@Url.Action("GetUserList","User", new { area="Admin"})'
+                    }).then(function successCallback(response) {
+                        $scope.Users = response.data.Data.Data;
+                        $scope.paginationConf.totalItems = response.data.Data.RowSize;
+                        // 请求成功执行代码
+                    }, function errorCallback(response) {
+                        // 请求失败执行代码
+                    });
+                },
+                getParams: function () {                   
+                    return App.Util.extend({ PageIndex: $scope.paginationConf.currentPage, PageSize: $scope.paginationConf.itemsPerPage },
+                        App.Util.Form.serialize(document.getElementById("uiQueryForm")));
+                }                
+            }
+            $scope.thisPage.initPage();
+        }
+
+    </script>
+}

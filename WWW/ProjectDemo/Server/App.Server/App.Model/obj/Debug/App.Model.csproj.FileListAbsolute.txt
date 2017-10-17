@@ -1,0 +1,7 @@
+E:\Home\Work\App_EC\V1.0.0\App.Server\App.Model\bin\Debug\App.Model.dll
+E:\Home\Work\App_EC\V1.0.0\App.Server\App.Model\bin\Debug\App.Model.pdb
+E:\Home\Work\App_EC\V1.0.0\App.Server\App.Model\bin\Debug\XmlDocument.xml
+E:\Home\Work\App_EC\V1.0.0\App.Server\App.Model\bin\Debug\App.Framework.Attributes.dll
+E:\Home\Work\App_EC\V1.0.0\App.Server\App.Model\bin\Debug\App.Framework.Attributes.pdb
+E:\Home\Work\App_EC\V1.0.0\App.Server\App.Model\obj\Debug\App.Model.dll
+E:\Home\Work\App_EC\V1.0.0\App.Server\App.Model\obj\Debug\App.Model.pdb

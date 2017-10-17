@@ -1,0 +1,11 @@
+E:\Home\Work\App_EC\V1.0.0\App.Server\App.IService\bin\Debug\App.IService.dll
+E:\Home\Work\App_EC\V1.0.0\App.Server\App.IService\bin\Debug\App.IService.pdb
+E:\Home\Work\App_EC\V1.0.0\App.Server\App.IService\bin\Debug\App.Framework.BaseEntity.dll
+E:\Home\Work\App_EC\V1.0.0\App.Server\App.IService\bin\Debug\App.Model.dll
+E:\Home\Work\App_EC\V1.0.0\App.Server\App.IService\bin\Debug\App.Framework.Attributes.dll
+E:\Home\Work\App_EC\V1.0.0\App.Server\App.IService\bin\Debug\App.Model.pdb
+E:\Home\Work\App_EC\V1.0.0\App.Server\App.IService\bin\Debug\App.Framework.BaseEntity.pdb
+E:\Home\Work\App_EC\V1.0.0\App.Server\App.IService\bin\Debug\App.Framework.Attributes.pdb
+E:\Home\Work\App_EC\V1.0.0\App.Server\App.IService\obj\Debug\App.IService.csprojResolveAssemblyReference.cache
+E:\Home\Work\App_EC\V1.0.0\App.Server\App.IService\obj\Debug\App.IService.dll
+E:\Home\Work\App_EC\V1.0.0\App.Server\App.IService\obj\Debug\App.IService.pdb

@@ -1,0 +1,163 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>App.Model</name>
+    </assembly>
+    <members>
+        <member name="P:App.Model.DBEntity.BaseEntity.ID">
+            <summary>
+            主键ID
+            </summary>
+        </member>
+        <member name="P:App.Model.DBEntity.BaseEntity.CreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:App.Model.DBEntity.BaseEntity.ModifyTime">
+            <summary>
+            修改时间
+            </summary>
+        </member>
+        <member name="T:App.Model.DBEntity.sys_User">
+            <summary>
+            用户实体
+            </summary>
+        </member>
+        <member name="P:App.Model.DBEntity.sys_User.Account">
+            <summary>
+            账号
+            </summary>
+        </member>
+        <member name="P:App.Model.DBEntity.sys_User.Password">
+            <summary>
+            密码
+            </summary>	
+        </member>
+        <member name="P:App.Model.DBEntity.sys_User.Name">
+            <summary>
+            Name
+            </summary>	
+        </member>
+        <member name="P:App.Model.DBEntity.sys_User.Nickname">
+            <summary>
+            昵称
+            </summary>	
+        </member>
+        <member name="P:App.Model.DBEntity.sys_User.Gender">
+            <summary>
+            Gender
+            </summary>	
+        </member>
+        <member name="P:App.Model.DBEntity.sys_User.Status">
+            <summary>
+            账号状态（1-启用 0-禁用 -1-已删除）
+            </summary>	
+        </member>
+        <member name="P:App.Model.DBEntity.sys_User.IsLimitIP">
+            <summary>
+            IsLimitIP
+            </summary>	
+        </member>
+        <member name="P:App.Model.DBEntity.sys_User.MaxIPCount">
+            <summary>
+            MaxIPCount
+            </summary>	
+        </member>
+        <member name="P:App.Model.DBEntity.sys_User.LoginID">
+            <summary>
+            LoginID
+            </summary>	
+        </member>
+        <member name="P:App.Model.DBEntity.sys_User.Email">
+            <summary>
+            Email
+            </summary>	
+        </member>
+        <member name="P:App.Model.DBEntity.sys_User.Mobile">
+            <summary>
+            Mobile
+            </summary>	
+        </member>
+        <member name="F:App.Model.Enum.ResultTypeEnum.Success">
+            <summary>
+            成功
+            </summary>
+        </member>
+        <member name="F:App.Model.Enum.ResultTypeEnum.ServiceException">
+            <summary>
+            服务方法异常
+            </summary>
+        </member>
+        <member name="F:App.Model.Enum.ResultTypeEnum.ApiParamError">
+            <summary>
+            Api参数错误
+            </summary>
+        </member>
+        <member name="F:App.Model.Enum.ResultTypeEnum.JsonDeserializeFailed">
+            <summary>
+            Json对象反序列化失败
+            </summary>
+        </member>
+        <member name="F:App.Model.Enum.ResultTypeEnum.ValidateSignFailed">
+            <summary>
+            验证签名失败
+            </summary>
+        </member>
+        <member name="F:App.Model.Enum.ResultTypeEnum.HttpError">
+            <summary>
+            网络连接失败
+            </summary>
+        </member>
+        <member name="P:App.Model.RequestBody.BaseRequest.Token">
+            <summary>
+            令牌Token
+            </summary>
+        </member>
+        <member name="P:App.Model.RequestBody.BaseRequest.PageIndex">
+            <summary>
+            当前页数
+            </summary>
+        </member>
+        <member name="P:App.Model.RequestBody.BaseRequest.PageSize">
+            <summary>
+            每页行数
+            </summary>
+        </member>
+        <member name="P:App.Model.RequestBody.BaseRequest.PageStart">
+            <summary>
+            分页开始序号
+            </summary>
+        </member>
+        <member name="P:App.Model.RequestBody.BaseRequest.PageEnd">
+            <summary>
+            分页结束序号
+            </summary>
+        </member>
+        <member name="P:App.Model.RequestBody.BaseRequest.OrderField">
+            <summary>
+            排序字段
+            </summary>
+        </member>
+        <member name="P:App.Model.RequestBody.BaseRequest.SortOrder">
+            <summary>
+            排序类型(0 升序 1降序)
+            </summary>
+        </member>
+        <member name="P:App.Model.RequestBody.UserRequest.Account">
+            <summary>
+            登录账户
+            </summary>
+        </member>
+        <member name="P:App.Model.ResponseBody.ResponseBase.ResultType">
+            <summary>
+            返回类型枚举（0:成功，1000：服务方法异常，1001:Api参数错误，1002：Json对象反序列化失败，验证前面失败，1004：网络连接失败
+            </summary>
+        </member>
+        <member name="P:App.Model.ResponseBody.ResponseBase.Message">
+            <summary>
+            返回信息描述
+            </summary>
+        </member>
+    </members>
+</doc>

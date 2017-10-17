@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.clearfix:before,
+			.clearfix:after {
+				content: " ";
+				display: table;
+			}
+			
+			.clearfix:after {
+				clear: both;
+			}
+			/**
+ * For IE 6/7 only
+ */
+			
+			.clearfix {
+				*zoom: 1;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div style="border: 1px solid #eee;">
+			<div style="width:50px;background:red;float:left;position:relative;">1111<br>1111<br>1111<br>1111<br>1111<br></div>
+			<div style="margin-left:50px;margin-top:0;margin-right:0;min-height:100%;padding: 0;position:relative;">
+				<div style="border:1px solid darkslategray;overflow: hidden;">		
+					
+					<div style="width:20%;background:yellow;float:left;">1111<br>1111<br></div>
+					<div style="width:80%;background:blue;float:left;">1111<br>1111<br>1111</div>
+					
+					
+				</div>
+			</div>
+
+		</div>
+	</body>
+
+</html>

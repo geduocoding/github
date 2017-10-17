@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		1111
+		<script type="application/javascript">
+			function temp1(){
+				console.log(this);
+				function temp2(){
+					console.log(this);
+				}
+				temp2();
+			} 
+			var obj={};
+			temp1.call(obj);
+		</script>
+	</body>
+</html>
