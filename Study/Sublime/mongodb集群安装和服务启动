@@ -1,0 +1,82 @@
+/**************************/
+以root 权限建好用户安装目录
+
+cd /usr/local/
+
+mkdir home
+
+cd home
+
+mkdir software
+mkdir cluster
+
+cd cluster
+
+mkdir rediscluster
+
+mkdir mongodbcluster
+
+mkdir rabbitcluster
+
+
+/**************************/
+
+
+
+<#@ template language="c#" HostSpecific="True" #>
+<#@ output extension= ".cs" #>
+<#
+	TableHost host = (TableHost)(Host);
+	host.Fieldlist.Sort(CodeCommon.CompareByintOrder);
+#>
+using System; 
+using System.Text;
+using System.Collections.Generic; 
+using System.Data;
+namespace <#= host.NameSpace #>.Model<# if( host.Folder.Length > 0) {#>.<#= host.Folder #><# } #>
+{
+	<# if( host.TableDescription.Length > 0) {#>
+ 	//<#= host.TableDescription #>
+	<# } #>
+	public class <#= host.GetModelClass(host.TableName) #>
+	{
+   		     
+      	<# foreach (ColumnInfo c in host.Fieldlist)
+		{ #>/// <summary>
+		/// <#= string.IsNullOrEmpty(c.Description)  ? c.ColumnName : c.Description #>
+        /// </summary>		
+		private <#= CodeCommon.DbTypeToCS(c.TypeName) #> _<#= c.ColumnName.ToString().ToLower() #>;
+        public <#= CodeCommon.DbTypeToCS(c.TypeName) #> <#= c.ColumnName #>
+        {
+            get{ return _<#= c.ColumnName.ToString().ToLower()#>; }
+            set{ _<#= c.ColumnName.ToString().ToLower() #> = value; }
+        }        
+		<# } #>
+   
+	}
+}
+
+严重性	代码	说明	项目	文件	行
+错误		命令“copy E:\Home\Work\App_EC\V1.0.0\App.Server\App.Model\App_Data\XmlDocument.xml E:\Home\Work\App_EC\V1.0.0\App.Server\App.Server\\App_Data\App.Model.XmlDocument.xml;
+copy E:\Home\Work\App_EC\V1.0.0\App.Server\App.Framework.BaseEntity\App_Data\XmlDocument.xml E:\Home\Work\App_EC\V1.0.0\App.Server\App.Server\\App_Data\App.Framework.BaseEntity.XmlDocument.xml;”已退出，代码为 1。	App.Server		
+
+
+copy "$(SolutionDir)App.Model\App_Data\XmlDocument.xml" 
+        "$(ProjectDir)\App_Data\App.Model.XmlDocument.xml";
+copy "$(SolutionDir)App.Framework.BaseEntity\App_Data\XmlDocument.xml"                        "$(ProjectDir)\App_Data\App.Framework.BaseEntity.XmlDocument.xml";
+
+严重性	代码	说明	项目	文件	行
+错误		命令“copy "E:\Home\Work\App_EC\V1.0.0\App.Server\App.Model\App_Data\XmlDocument.xml" 
+"E:\Home\Work\App_EC\V1.0.0\App.Server\App.Server\\App_Data\App.Model.XmlDocument.xml";
+copy "E:\Home\Repository\FrameWork\App.Framework\App.Framework.BaseEntity\App_Data\XmlDocument.xml"                        
+"E:\Home\Work\App_EC\V1.0.0\App.Server\App.Server\\App_Data\App.Framework.BaseEntity.XmlDocument.xml";”已退出，代码为 9009。	App.Server		
+
+
+xcopy /s /y "$(SolutionDir)App.Model\App_Data\XmlDocument.xml" 
+"$(ProjectDir)App_Data\App.Model.XmlDocument.xml";
+xcopy /s /y "E:\Home\Repository\FrameWork\App.Framewok\App.Framework.BaseEntity\App_Data\XmlDocument.xml"                        
+"$(ProjectDir)App_Data\xxxx.XmlDocument.xml";
+
+
+copy $(SolutionDir)App.Model\App_Data\XmlDocument.xml $(ProjectDir)App_Data\App.Model.XmlDocument.xml
+copy E:\Home\Repository\FrameWork\App.Framework\App.Framework.BaseEntity\App_Data\XmlDocument.xml $(ProjectDir)App_Data\App.Framework.BaseEntity.XmlDocument.xml

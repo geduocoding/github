@@ -1,0 +1,14 @@
+
+void main(){
+  SqList L;
+  InitList_Sq(L);
+  printf("\r\n线性表长度%d，线性表大小%d",L.length,L.listsize);
+  ListInsert_Sq(L,1,5);
+  ListInsert_Sq(L,1,6);
+  ListInsert_Sq(L,1,7);
+  printf("\r\n线性表长度%d，线性表大小%d",L.length,L.listsize);
+  for(int i=0;i<L.length;i++){
+    printf("\r\n序号：%d  值：%d",i,L.elem[i]);
+  }
+  printf("\r\n程序结束");
+}

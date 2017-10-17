@@ -1,0 +1,130 @@
+/**************************/
+以root 权限建好用户安装目录
+
+cd /usr/local/
+
+mkdir home
+
+cd home
+
+mkdir software
+mkdir cluster
+
+cd cluster
+
+mkdir rediscluster
+
+mkdir mongodbcluster
+
+mkdir rabbitcluster
+
+
+/**************************/
+
+
+
+linux 安装 （software)
+
+1、下载和解包（在software文件夹下   cd  /usrl/local/home/software）
+
+wget http://download.redis.io/releases/redis-4.0.1.tar.gz
+tar xzf redis-4.0.1.tar.gz
+cd redis-4.0.1
+make
+
+mv ./redis-4.0.1/ ../cluster/rediscluster/0001/
+
+2.修改0001集群配置文件
+
+daemonize    yes                          //redis后台运行
+cluster-enabled  yes                      //开启集群  把注释#去掉
+cluster-config-file  nodes_7000.conf      //集群的配置  配置文件首次启动自动生成 7000,7001,7002
+cluster-node-timeout  15000                //请求超时  设置15秒够了
+appendonly  yes                           //aof日志开启  有需要就开启，它会每次写操作都记录一条日志
+bind 0.0.0.0
+
+3.复制5份
+cy -r 0001 0002
+cy -r 0001 0003
+cy -r 0001 0004
+cy -r 0001 0005
+cy -r 0001 0006
+
+4.修改其他节点redis.conf配置文件（0002,0003，0004,0005,0006）
+
+pidfile  /var/run/redis_7001.pid          //pidfile文件对应7001,7002,7003
+port  7001                                //端口7001,7002,7003
+
+5.启动服务
+cd /usr/local/cluster/rediscluster
+
+./0001/src/redis-server   ./0001/redis.conf
+./0002/src/redis-server   ./0002/redis.conf
+./0003/src/redis-server   ./0003/redis.conf
+./0004/src/redis-server   ./0004/redis.conf
+./0005/src/redis-server   ./0005/redis.conf
+./0006/src/redis-server   ./0006/redis.conf
+
+
+6、查看服务
+
+ps -ef | grep redis   #查看是否启动成功
+
+netstat -tnlp | grep redis #可以看到redis监听端口
+
+
+
+7.安装ruby 版本（2.3.3）
+
+(1)安装curl
+
+sudo yum install curl
+
+(2)安装RVM
+
+curl -L get.rvm.io | bash -s stable 
+
+(3) 
+
+source /usr/local/rvm/scripts/rvm
+
+(4) 查看rvm库中已知的ruby版本
+
+rvm list known
+
+(5)  安装一个ruby版本
+
+rvm install 2.3.3
+
+(6)  使用一个ruby版本
+
+rvm use 2.3.3
+
+(7)  设置默认版本
+
+rvm remove 2.0.0
+
+(8) 卸载一个已知版本
+
+ruby --version
+
+(9) 再安装redis就可以了
+
+gem install redis
+
+
+8. 关闭防火墙
+service iptables stop
+
+9. 运行redis-trib.rb (在rediscluster目录下操作)
+
+cd ./0001/src/redis-trib.rb
+
+redis-trib.rb  create  --replicas  1   192.168.1.237:7001  192.168.1.237:7003 192.168.1.238:7003  192.168.1.238:7004  192.168.1.238:7005 192.168.1.237:7006
+
+注意：
+如果节点都在一台服务器上，执行上面无需等待即可
+否则 若提示  Waiting for the cluster to join..........  
+则需对相应的服务器redis节点都执行加入集群命令
+在相应服务器上（ip地址）, redis-cli -c -p 700*  分别进入redis各节点的客户端命令窗口， 依次输入 cluster meet 192.168.1.238 7000……
+
